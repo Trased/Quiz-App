@@ -835,7 +835,7 @@ Intrebare::Intrebare(int num)
 			raspunsCorect = raspuns[1][0];
 			break;
 		}
-/*		case 76:
+		case 76:
 		{
 			intrebare = "1.Cu care dintre urmatorii ac1z1 se combina toate elementele grupei a 4-a: ";
 			raspuns[0] += ") HCI ";
@@ -1439,7 +1439,7 @@ Intrebare::Intrebare(int num)
 			raspuns[4] += ") nici un raspuns nu este corect ";
 			raspunsCorect = raspuns[0][0];
 			break;
-		}*/
+		}
 	}
 }
 int Intrebare::verificareRaspuns(char* rasp)
@@ -1462,6 +1462,13 @@ void Intrebare::afisare()
 	cout << intrebare << "\n";
 	for (int i = 0; i < 5; i++)
 	{
-		cout  << raspuns[b[i]] << "\n";
+		int j = 0;
+		while (raspuns[b[j]][0] != (char(i + 97)))
+		{
+			j++;
+		}
+		
+		cout << raspuns[b[j]] << "\n";
+		j = 0;
 	}
 }
